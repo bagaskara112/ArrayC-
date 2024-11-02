@@ -3,7 +3,7 @@
 using namespace std;
 
 void main() {
-	int A[3][3], B[3][3], hasil[3][3];
+	int A[3][3], B[3][3], hasil[3][3], jml=0;
 
 	//Matrix A
 	cout << "Masukan Matrix A :\n";
@@ -25,12 +25,18 @@ void main() {
 		}
 	}
 	cout << endl;
-	
+
 	//rumus penjumlahan
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++) {
-			hasil[i][j] = A[i][j] + B[i][j];
+			jml = 0;
+			for (int k = 0; k < 3; k++)
+			{
+				jml = jml + A[i][k] * B[k][j];
+				hasil[i][j] = jml;
+			}
+			
 		}
 	}
 
